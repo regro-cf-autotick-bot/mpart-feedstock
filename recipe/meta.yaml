@@ -1,13 +1,13 @@
 {% set name = "mpart" %}
-{% set version = "0.3.2" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/MeasureTransport/MParT/archive/v{{ version }}-beta.tar.gz
-  sha256: fd3f592ee4ddeca377bc9ebf79b8ac539e179f83f44a4642e12dfae32e9b0364
+  url: https://github.com/MeasureTransport/MParT/archive/{{ version }}.tar.gz
+  sha256: 80262cc283131b0203b92b2bf35480153f8c669c9b01893e0db471c1d55bebc9
   
 build:
   number: 0
