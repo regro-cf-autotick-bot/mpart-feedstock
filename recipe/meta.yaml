@@ -1,16 +1,16 @@
 {% set name = "mpart" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/MeasureTransport/MParT/archive/{{ version }}.tar.gz
-  sha256: 80262cc283131b0203b92b2bf35480153f8c669c9b01893e0db471c1d55bebc9
-  
+  url: https://github.com/MeasureTransport/MParT/archive/v{{ version }}.tar.gz
+  sha256: 323d7567a9f4b6e9c389a2d53770c3adb582991e78cfd70e59a45abdcc1dbf15
+
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -33,15 +33,15 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - eigen >=3.3.9
-  
+
 test:
   imports:
     - mpart
 
 about:
   home: https://github.com/MeasureTransport/MParT
-  summary: 'Performance portable implementations of monotone parameterizations and transport maps.'
-  description: 'MParT is a library for monotone parameterizations written in c++ with bindings to python, julia, and matlab.  It is designed as a core building block for research and software invovling transport maps and isotonic regression.'
+  summary: Performance portable implementations of monotone parameterizations and transport maps.
+  description: MParT is a library for monotone parameterizations written in c++ with bindings to python, julia, and matlab.  It is designed as a core building block for research and software invovling transport maps and isotonic regression.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
