@@ -10,7 +10,7 @@ source:
   sha256: 969bc04e90756ff59dfdb8c02ac467ab796fc2f56609e6a45b8d5532f24d1d9d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
     - python
     - numpy
     - eigen >=3.3.9
-    - pybind11 >=2.10
+    - pybind11
   run:
     - {{ compiler('cxx') }}
     - cmake >=3.13
