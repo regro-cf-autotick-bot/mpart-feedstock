@@ -18,6 +18,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake >=3.13
     - make
+    - nlopt
   host:
     - {{ compiler('cxx') }}
     - cmake >=3.13
@@ -26,6 +27,8 @@ requirements:
     - numpy
     - eigen >=3.3.9
     - pybind11
+    - cereal
+    - nlopt
   run:
     - {{ compiler('cxx') }}
     - cmake >=3.13
@@ -34,7 +37,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - eigen >=3.3.9
     - cereal
-    - nlopt
 
 test:
   imports:
