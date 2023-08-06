@@ -33,6 +33,8 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - eigen >=3.3.9
+    - cereal
+    - nlopt
 
 test:
   imports:
