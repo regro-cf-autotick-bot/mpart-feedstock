@@ -1,17 +1,19 @@
 {% set name = "mpart" %}
-{% set version = "1.4.0" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/MeasureTransport/MParT/archive/v{{ version }}.tar.gz
-  sha256: 969bc04e90756ff59dfdb8c02ac467ab796fc2f56609e6a45b8d5532f24d1d9d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/MParT-{{ version }}.tar.gz
+  sha256: 096a71b1dcefb1f094971e5e04064b765db19507cd3a1010076970ca2a1fc323
 
 build:
-  number: 1
-  skip: true  # [win]
+  skip: true # [win]
+  skip: true # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   build:
@@ -21,22 +23,31 @@ requirements:
   host:
     - {{ compiler('cxx') }}
     - cmake >=3.13
+    - setuptools
+    - scikit-build >=0.13
     - make
-    - python
+    - python >=3.7
     - numpy
     - eigen >=3.3.9
     - pybind11
+    - pip
+    - cereal
+    - nlopt
   run:
     - {{ compiler('cxx') }}
     - cmake >=3.13
     - make
     - python
     - {{ pin_compatible('numpy') }}
-    - eigen >=3.3.9
+    - nlopt
 
 test:
   imports:
     - mpart
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/MeasureTransport/MParT
