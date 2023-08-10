@@ -10,8 +10,8 @@ source:
   sha256: 096a71b1dcefb1f094971e5e04064b765db19507cd3a1010076970ca2a1fc323
 
 build:
-  skip: true # [win]
-  skip: true # [py<38]
+  skip: true  # [win]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -26,7 +26,7 @@ requirements:
     - setuptools
     - scikit-build >=0.13
     - make
-    - python >=3.7
+    - python
     - numpy
     - eigen >=3.3.9
     - pybind11
