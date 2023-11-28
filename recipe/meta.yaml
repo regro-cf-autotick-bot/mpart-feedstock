@@ -1,5 +1,5 @@
 {% set name = "mpart" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/MParT-{{ version }}.tar.gz
-  sha256: deea97121a3ec5a318023000a33b844388d3465e3c1b9f16b0b6c8bda96cfda2
+  sha256: f340a056d97ffcae5ab3415d554cc01a07216b8ab658fbd2bf3609b3a223c1c1
 
 build:
   skip: true  # [win]
